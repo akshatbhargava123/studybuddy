@@ -12,19 +12,19 @@
   <ion-grid no-padding>
     <ion-row style="background-color: #921B30;" padding>
       <ion-col auto text-center>
-        <span class="secondary-header-text">Semester : 3</span>
+        <span class="secondary-header-text">Semester : {{ semester }}</span>
       </ion-col>
       <ion-col col-1 text-center><span class="secondary-header-text">|</span></ion-col>
       <ion-col auto text-center>
-        <span class="secondary-header-text">Branch : CSE</span>
+        <span class="secondary-header-text">Branch : {{ branch }}</span>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <ion-list>
-    <button ion-item *ngFor="let subject of subjects" style="padding: 7px" (click)="fetchNotes()">
-      <text-avatar [text]="subject.name" [color]="subject.color" item-left style="margin-left: 5px"></text-avatar>
-      <span style="font-size: large">{{ subject.name | titlecase }}</span>
+    <button ion-item *ngFor="let subject of subjects"  (click)="fetchNotes(subject)">
+      <text-avatar [text]="subject" item-left style="margin-left: 5px"></text-avatar>
+      <span style="font-size: large">{{ subject | titlecase }}</span>
     </button>
 
   </ion-list>

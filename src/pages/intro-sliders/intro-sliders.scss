@@ -1,0 +1,9 @@
+page-intro-sliders {
+
+  color: white;
+
+  .swiper-pagination-bullet-active {
+    background: map-get($colors, $key: theme);
+  }
+
+}

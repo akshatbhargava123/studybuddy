@@ -21,10 +21,6 @@ export class MyProfilePage {
     public alertCtrl: AlertController
   ) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyProfilePage');
-  }
-
   changeInfo() {
     const confirm = this.alertCtrl.create({
       title: 'Sure about data?',

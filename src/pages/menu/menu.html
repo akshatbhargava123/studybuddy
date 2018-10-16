@@ -18,45 +18,46 @@
       <ion-list-header>
         SEARCH
       </ion-list-header>
-      <ion-item (click)="openPage('SearchPage')" menuToggle>
+      <ion-item (click)="openPage('SearchPage', 'notes')" menuToggle>
         <ion-icon name="paper" item-start></ion-icon>
         Notes
       </ion-item>
-      <ion-item (click)="openPage('SearchPage')" menuToggle>
+      <ion-item (click)="openPage('SearchPage', 'pfs')" menuToggle>
         <ion-icon name="list" item-start></ion-icon>
         Practical Files
       </ion-item>
-      <ion-item (click)="openPage('SearchPage')" menuToggle>
+      <ion-item (click)="openPage('SearchPage', 'ebooks')" menuToggle>
         <ion-icon name="book" item-start></ion-icon>
         E-Books
       </ion-item>
       <ion-list-header>
         OTHERS
       </ion-list-header>
-      <ion-item menuToggle>
-          <ion-icon name="star" item-start></ion-icon>
-          Redeem Video Points
-        </ion-item>
+      <ion-item menuToggle (click)="redeemVideoPoints()">
+        <ion-icon name="star" item-start></ion-icon>
+        Redeem Video Points
+      </ion-item>
       <ion-item (click)="openPage('MyProfilePage')" menuToggle>
         <ion-icon name="person" item-start></ion-icon>
         Profile
       </ion-item>
       <ion-item (click)="openPage('ContactUsPage')" menuToggle>
-          <ion-icon name="chatboxes" item-start></ion-icon>
+        <ion-icon name="chatboxes" item-start></ion-icon>
         Contact Us
       </ion-item>
       <ion-item (click)="openPage('AboutUsPage')" menuToggle>
         <ion-icon name="document" item-start></ion-icon>
         About Us
       </ion-item>
-      <ion-footer>
-        <ion-item (click)="openPage('LoginPage')" menuToggle>
-            <ion-icon name="log-out" item-start></ion-icon>
-            Log out
-          </ion-item>
-      </ion-footer>
+
     </ion-list>
   </ion-content>
+  <ion-footer>
+    <ion-item (click)="openPage('LoginPage')" menuToggle>
+      <ion-icon name="log-out" item-start></ion-icon>
+      Log out
+    </ion-item>
+  </ion-footer>
 
 </ion-menu>
 

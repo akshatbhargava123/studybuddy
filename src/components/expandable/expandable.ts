@@ -22,7 +22,6 @@ export class ExpandableComponent {
   }
 
   ngOnChanges() {
-    console.log(this._expanded)
     if (this._expanded) {
       this.renderer.setElementStyle(this.cardContent.nativeElement, "height", "100%");
       this.renderer.setElementStyle(this.cardContent.nativeElement, "padding", "7px 8px");

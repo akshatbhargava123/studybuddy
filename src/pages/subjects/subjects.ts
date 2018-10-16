@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SubjectsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { SUBJECTS } from '../../app/app.constants';
 
 @IonicPage()
 @Component({
@@ -18,28 +12,23 @@ export class SubjectsPage {
   items: any = [];
   itemExpandHeight: number = 100;
 
-  subjects = [
-    {
-      name: "applied maths",
-      color: "#921B30",
-      expanded: false,
-      icon: 'ios-arrow-forward'
-    },
-    {
-      name: "applied physics",
-      color: "#921B30",
-      expanded: false,
-      icon: 'ios-arrow-forward'
-    },
-    {
-      name: "electrical technology",
-      color: "#921B30",
-      expanded: false,
-      icon: 'ios-arrow-forward'
-    }
-  ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  semester: number = 0;
+  branch: string = 'CSE';
 
+  subjects = [];
+
+  constructor(
+    private navCtrl: NavController,
+    private navParams: NavParams
+  ) {
+    this.initSubjects();
+  }
+
+  initSubjects() {
+    this.subjects = SUBJECTS[this.semester][this.branch];
+    this.subjects = this.subjects.map(subject => {
+      return { name: subject, icon: 'ios-arrow-forward', expanded: false }
+    });
   }
 
   expandItem(item) {
@@ -54,8 +43,14 @@ export class SubjectsPage {
     });
   }
 
-  getNotes() {
-    this.navCtrl.push('ListPage');
+  openList(subjectName: string, type: string) {
+    const navParams = {
+      semester: this.semester + 1,
+      branch: this.branch,
+      subject: subjectName,
+      type
+    };
+    this.navCtrl.push('ListPage', navParams);
   }
 
 }

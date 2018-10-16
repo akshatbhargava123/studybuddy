@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { AdMobFreeRewardVideo } from '@ionic-native/admob-free';
 
-import { MyApp } from './app.component';
-import { TextAvatarDirective } from '../directives/text-avatar/text-avatar';
-import { DirectivesModule } from '../directives/directives.module';
-import { ExpandableComponent } from '../components/expandable/expandable';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { CommonProvider } from '../providers/common/common';
 import { AuthProvider } from '../providers/auth/auth';
 import { DbProvider } from '../providers/db/db';
-import { CommonProvider } from '../providers/common/common';
-import { HttpClientModule } from '@angular/common/http';
-import { HttplibProvider } from '../providers/httplib/httplib';
+
+import { MyApp } from './app.component';
+import { FIREBASE_CONFIG } from './app.config';
 
 @NgModule({
   declarations: [
@@ -21,6 +27,9 @@ import { HttplibProvider } from '../providers/httplib/httplib';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -34,7 +43,9 @@ import { HttplibProvider } from '../providers/httplib/httplib';
     AuthProvider,
     DbProvider,
     CommonProvider,
-    HttplibProvider
+    AdMobFreeRewardVideo,
+    File,
+    FileTransfer
   ]
 })
 export class AppModule {}

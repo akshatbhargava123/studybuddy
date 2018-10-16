@@ -8,6 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchPage {
 
+  selectedSem: number;
+  selectedBranch: string;
+  type: string;
+
   semesters = [
     { number: "semester 1" },
     { number: "semester 2" },
@@ -29,15 +33,20 @@ export class SearchPage {
     { name: "Civil" }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+  constructor(
+    private navCtrl: NavController,
+    private navParams: NavParams
+  ) {
+    this.type = this.navParams.get('type');
   }
 
   getSubjects() {
-    this.navCtrl.push('GetSubjectsPage');
+    // console.log(this.selectedSem, this.selectedBranch, this.type)
+    this.navCtrl.push('GetSubjectsPage', {
+      semester: this.selectedSem,
+      branch: this.selectedBranch,
+      type: this.type
+    });
   }
 
 }
