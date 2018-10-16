@@ -1,0 +1,20 @@
+page-list {
+  .header {
+    color: map-get($colors, theme);
+    b {
+      font-size: large !important;
+    }
+  }
+
+  span {
+    b {
+      font-size: larger;
+    }
+  }
+  
+  .avatar {
+    margin-top: 50%;
+    font-size: xx-large;
+    color: white
+  }
+}

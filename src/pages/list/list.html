@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar color="theme">
+    <ion-title>Applied Maths</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let note of notes">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 class="theme-bg" text-center>
+          <span style="height: 100%; width: 100%">
+          <p ion-text class="avatar">
+            {{getTwoLetters(note.title)}}
+          </p>
+          </span>
+        </ion-col>
+        <ion-col col-9>
+          <span class="header"><b>{{note.title}}</b></span>
+          <hr />
+
+          <ion-row>
+            <ion-col col-1>
+              <ion-icon name="person" color="theme"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+              <span>Author:</span>
+            </ion-col>
+            <ion-col col-6>
+              {{note.author}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-1>
+              <ion-icon name="calendar" color="theme"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+              <span>Upload Date:</span>
+            </ion-col>
+            <ion-col col-6>
+              {{note.date}}
+            </ion-col>
+          </ion-row>
+          <hr />
+
+          <ion-row>
+            <ion-col auto>
+              <span>
+                <ion-icon name="eye" color="theme"></ion-icon>
+                {{note.views}}
+              </span>
+            </ion-col>
+            <ion-col text-right>
+              <ion-icon name="download" color="theme"></ion-icon>
+              <span>{{note.size.toFixed(2)}}MB</span>
+            </ion-col>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+</ion-content>

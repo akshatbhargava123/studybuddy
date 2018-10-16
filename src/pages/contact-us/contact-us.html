@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ContactUsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="theme">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+
+    <ion-title>Contact Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div padding></div>
+  <div padding></div>
+
+
+  <h3 text-center>
+    SUGGESTIONS, FEEDBACK, ADVICE ?
+  </h3>
+
+  <h5 style="color: grey" text-center>We thrive to improve. Drop us a mail.</h5>
+  <div padding></div>
+  <ion-list>
+    <ion-item>
+      <p style="font-size: 15px">NAME</p>
+      <br />
+      <span>Akshat Bhargava</span>
+    </ion-item>
+    <ion-item>
+      <p style="font-size: 15px">COLLEGE</p>
+      <br />
+      <span>HMR Institute of Technology & Management</span>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-size: 15px">SUBJECT</ion-label>
+      <ion-select [(ngModel)]="subject">
+        <ion-option *ngFor="let subject of subjects">
+          {{subject.title}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <br />
+    <ion-item>
+        <ion-label stacked style="font-size: 15px">MESSAGE</ion-label>
+        <ion-textarea [(ngModel)]="message"></ion-textarea>
+      </ion-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar color="theme">
+      <button ion-button clear block style="color:white; font-size: large">SEND MESSAGE</button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

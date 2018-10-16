@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Subjects</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div padding></div> -->
+  <ion-list>
+    <ion-grid>
+      <ion-row *ngFor="let subject of subjects" style="padding: 5px">
+        <ion-col col-10>
+          <ion-item>
+            <text-avatar [text]="subject.name" [color]="subject.color" item-left style="margin-left: 5px"></text-avatar>
+            <span style="font-size: large">{{ subject.name | titlecase }}</span>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button icon-only clear style="color: #921B30; size: 10px;margin-top: 12px" (click)="expandItem(subject)">
+            <ion-icon [name]="subject.icon"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-2 *ngIf="subject.expanded"></ion-col>
+        <ion-col col-10 *ngIf="subject.expanded">
+          <button ion-button block color="theme" (click)="getNotes()">
+            <ion-icon name="paper" margin-right></ion-icon>Notes
+          </button>
+          <button ion-button block color="theme" (click)="getNotes()">
+            <ion-icon name="help" margin-right></ion-icon>Question Paper
+          </button>
+          <button ion-button block color="theme" (click)="getNotes()">
+            <ion-icon name="book" margin-right></ion-icon>
+            E-Book
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="theme">
+    <ion-title style="font-size: larger">StudyBuddy</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid no-padding>
+    <ion-row style="background-color: #921B30;" padding>
+      <ion-col auto text-center>
+        <span class="secondary-header-text">Semester : 3</span>
+      </ion-col>
+      <ion-col col-1 text-center><span class="secondary-header-text">|</span></ion-col>
+      <ion-col auto text-center>
+        <span class="secondary-header-text">Branch : CSE</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <button ion-item *ngFor="let subject of subjects" style="padding: 7px" (click)="fetchNotes()">
+      <text-avatar [text]="subject.name" [color]="subject.color" item-left style="margin-left: 5px"></text-avatar>
+      <span style="font-size: large">{{ subject.name | titlecase }}</span>
+    </button>
+
+  </ion-list>
+</ion-content>

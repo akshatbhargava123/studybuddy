@@ -1,0 +1,64 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="theme" style="height: 8em">
+      <p ion-text color="light" style="font-size: x-large" margin-left>StudyBuddy</p>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <ion-item (click)="openPage('SubjectsPage')" menuToggle>
+        <ion-icon name="albums" item-start></ion-icon>
+        My Subjects
+      </ion-item>
+      <ion-item (click)="openPage('HomePage')" menuToggle>
+        <ion-icon name="download" item-start></ion-icon>
+        My Downloads
+      </ion-item>
+      <ion-list-header>
+        SEARCH
+      </ion-list-header>
+      <ion-item (click)="openPage('SearchPage')" menuToggle>
+        <ion-icon name="paper" item-start></ion-icon>
+        Notes
+      </ion-item>
+      <ion-item (click)="openPage('SearchPage')" menuToggle>
+        <ion-icon name="list" item-start></ion-icon>
+        Practical Files
+      </ion-item>
+      <ion-item (click)="openPage('SearchPage')" menuToggle>
+        <ion-icon name="book" item-start></ion-icon>
+        E-Books
+      </ion-item>
+      <ion-list-header>
+        OTHERS
+      </ion-list-header>
+      <ion-item menuToggle>
+          <ion-icon name="star" item-start></ion-icon>
+          Redeem Video Points
+        </ion-item>
+      <ion-item (click)="openPage('MyProfilePage')" menuToggle>
+        <ion-icon name="person" item-start></ion-icon>
+        Profile
+      </ion-item>
+      <ion-item (click)="openPage('ContactUsPage')" menuToggle>
+          <ion-icon name="chatboxes" item-start></ion-icon>
+        Contact Us
+      </ion-item>
+      <ion-item (click)="openPage('AboutUsPage')" menuToggle>
+        <ion-icon name="document" item-start></ion-icon>
+        About Us
+      </ion-item>
+      <ion-footer>
+        <ion-item (click)="openPage('LoginPage')" menuToggle>
+            <ion-icon name="log-out" item-start></ion-icon>
+            Log out
+          </ion-item>
+      </ion-footer>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

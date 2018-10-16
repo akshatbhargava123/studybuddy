@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search Anything</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p style="text-align: center; font-size: 18px; color: #921B30">We are commited to bring you best of best notes.</p>
+  <p style="text-align: center; font-size: 18px; color: #921B30">Go explore!</p>
+
+  <div padding></div>
+  <ion-item style="border:ridge; border-color:#921B30;">
+    <ion-label color="dark">Select Semester</ion-label>
+    <ion-select [(ngModel)]="semester" interface="popover">
+      <ion-option *ngFor="let semester of semesters">{{semester.number}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div padding></div>
+  <ion-item style="border:ridge; border-color:#921B30;">
+    <ion-label color="dark">Select Branch</ion-label>
+    <ion-select [(ngModel)]="branch" interface="popover">
+      <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-footer>
+    <ion-toolbar color="theme">
+      <button ion-button block clear (click)="getSubjects()">
+        <span style="font-size: large; color: white">Get Subjects
+        </span>
+      </button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the AboutUsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,26 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-about-us',
+  templateUrl: 'about-us.html',
 })
-export class HomePage {
+export class AboutUsPage {
 
-  downloads = [{
-    title: "Unit-1 differential",
-    subject: "Applied Maths",
-    type: "Notes"
-  },
-  {
-    title: "Unit-3 Spectrum Changes",
-    subject: "Applied Physics",
-    type: "Question Paper"
-  }]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log('ionViewDidLoad AboutUsPage');
   }
 
 }

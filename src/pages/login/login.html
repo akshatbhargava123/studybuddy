@@ -1,0 +1,64 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="theme">
+    <ion-title text-center>Welcome</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div padding></div>
+  <img src="../assets/imgs/download.png" style="padding-left: 33%;" />
+  <div padding></div>
+  <div padding></div>
+  <div padding></div>
+
+
+  <ion-item style="border:ridge; border-color:#921B30">
+    <ion-label color="dark">Select Semester</ion-label>
+    <ion-select [(ngModel)]="semester" interface="popover">
+      <ion-option *ngFor="let semester of semesters">{{semester.number}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div padding></div>
+  <ion-item style="border:ridge; border-color:#921B30;">
+    <ion-label color="dark">Select Branch</ion-label>
+    <ion-select [(ngModel)]="branch" interface="popover">
+      <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <div padding></div>
+  <ion-item style="border:ridge; border-color:#921B30">
+    <ion-label color="dark">Select College</ion-label>
+    <ion-select [(ngModel)]="college" interface="popover">
+      <ion-option *ngFor="let college of colleges">{{college.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-footer>
+    <ion-toolbar color="theme">
+      <button ion-button color="light" block (click)="login()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-2>
+            <ion-icon name="logo-googleplus" color="theme"></ion-icon>
+          </ion-col>
+          <ion-col col-9>
+            Sign In
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>
