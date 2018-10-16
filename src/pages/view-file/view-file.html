@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <ion-title>{{ fileName }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <pdf-viewer [src]="pdfsrc" [original-size]="true" [zoom]="pdfZoom" [fit-to-page]="true" [render-text]="false" style="display: block;"></pdf-viewer>
+
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="zoomIn()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <button ion-fab mini (click)="zoomOut()">
+      <ion-icon name="remove"></ion-icon>
+    </button>
+    <button ion-fab mini (click)="resetZoom()">
+      <ion-icon name="refresh"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastOptions } from 'ionic-angular';
 import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { DbProvider } from '../../providers/db/db';
@@ -23,6 +23,7 @@ export class ListPage {
   notes: Note[] = [];
 
   constructor(
+    private navCtrl: NavController,
     private navParams: NavParams,
     private common: CommonProvider,
     private file: File,
@@ -63,12 +64,15 @@ export class ListPage {
   download(source: string, name: string) {
     const ft = this.fileTransfer.create()
     const fileName = `${this.type}-${this.semester}-${this.branch}-${this.subject}-${name}.pdf`;
-    this.common.getToastInstance(fileName);
-    ft.onProgress = (progress) => console.log('progress:', progress)
-    ft.download(source, this.file.dataDirectory + fileName).then(result => {
-      console.log(result)
-      this.common.getToastInstance(JSON.stringify(result));
-    }).catch(err => console.log(err));
+    const loading = this.common.getLoadingInstance('Downloading...');
+    loading.present();
+    ft.download(source, this.file.dataDirectory + '/data/' + fileName).then(result => {
+      loading.dismiss();
+      this.common.getToastInstance(` ${name} - Download finished! Opening...`, 1000).present();
+      setTimeout(() => {
+        this.navCtrl.push('ViewFilePage', { fileName });
+      }, 500);
+    }).catch(err => console.log(JSON.stringify(err)));
   }
 
 }

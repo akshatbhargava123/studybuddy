@@ -13,6 +13,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 import { CommonProvider } from '../providers/common/common';
 import { AuthProvider } from '../providers/auth/auth';
 import { DbProvider } from '../providers/db/db';

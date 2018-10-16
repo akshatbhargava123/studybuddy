@@ -13,13 +13,15 @@
       <ion-row>
         <ion-col col-3 class="theme-bg" text-center>
           <span style="height: 100%; width: 100%">
-          <p ion-text class="avatar">
-            {{getTwoLetters(note.title)}}
-          </p>
+            <p ion-text class="avatar">
+              {{getTwoLetters(note.title)}}
+            </p>
           </span>
         </ion-col>
         <ion-col col-9>
-          <span class="header"><b>{{note.title}}</b></span>
+          <span class="header">
+            <b>{{note.title}}</b>
+          </span>
           <hr />
 
           <ion-row>
@@ -64,4 +66,5 @@
     </ion-grid>
 
   </ion-card>
+
 </ion-content>

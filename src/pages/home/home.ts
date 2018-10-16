@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { File } from '@ionic-native/file';
 
 @IonicPage()
 @Component({
@@ -22,7 +23,20 @@ export class HomePage {
   ];
 
   constructor(
-    private navCtrl: NavController
-  ) { }
+    private navCtrl: NavController,
+    private file: File
+  ) {
+    this.file.listDir(this.file.dataDirectory, "data").then(res => {
+      const files = res.filter(res => res.isFile);
+      files.forEach((file) => {
+        const parts = file.name.split('-');
+        const type = parts[0],
+              semester = parts[1],
+              branch = parts[2],
+              fileName = parts[3];
+        console.log({ type, semester, branch, fileName });
+      });
+    }).catch(err => console.log(JSON.stringify(err)))
+  }
 
 }
