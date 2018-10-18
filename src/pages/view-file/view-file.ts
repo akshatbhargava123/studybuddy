@@ -14,6 +14,7 @@ const DEFAULT_ZOOM:number = 1;
 export class ViewFilePage {
 
   fileName: string;
+  actualFileName: string;
 
   pdfsrc;
   pdfZoom = DEFAULT_ZOOM;
@@ -25,16 +26,12 @@ export class ViewFilePage {
     private common: CommonProvider
   ) {
     this.fileName = this.navParams.get('fileName');
-    console.log(this.fileName)
-    this.file.readAsArrayBuffer(this.file.dataDirectory, this.fileName).then(arBuffer => {
+    const ar = this.fileName.split('-');
+    this.actualFileName = ar[ar.length - 1];
+    this.file.readAsArrayBuffer(this.file.dataDirectory + '/data', this.fileName).then(arBuffer => {
       const fileURL = new Uint8Array(arBuffer);
-      console.log(fileURL);
       this.pdfsrc = fileURL;
-    }).catch(error => this.common.getToastInstance('Some error occured!', 1500).present());
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewFilePage');
+    }).catch(error => this.common.getToastInstance(error.message, 1500).present());
   }
 
   zoomIn() {

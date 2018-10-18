@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable()
 export class AuthProvider {
@@ -7,19 +9,34 @@ export class AuthProvider {
   static TOKEN_KEY = 'token';
 
   constructor(
-    private storage: Storage
+    private afAuth: AngularFireAuth,
+    private afDb: AngularFirestore
   ) { }
 
   setToken(value: string) {
-    return this.storage.set(AuthProvider.TOKEN_KEY, value);
+    return localStorage.setItem(AuthProvider.TOKEN_KEY, value);
   }
 
   getToken() {
-    return this.storage.get(AuthProvider.TOKEN_KEY);
+    return localStorage.get(AuthProvider.TOKEN_KEY);
   }
 
-  googleLogin() {
+  sendPasswordResetEmail(email: string) {
+    return this.afAuth.auth.sendPasswordResetEmail(email);
+  }
 
+  register(email: string, password: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+
+  login(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  setDetailsInDb(uid, semester, branch, college) {
+    return this.afDb.doc(`users/${uid}`).set({
+      semester, branch, college
+    });
   }
 
 }

@@ -3,17 +3,18 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { FileTransfer } from '@ionic-native/file-transfer';
-import { File } from '@ionic-native/file';
 import { AdMobFreeRewardVideo } from '@ionic-native/admob-free';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { StatusBar } from '@ionic-native/status-bar';
+import { Facebook } from '@ionic-native/facebook';
+import { File } from '@ionic-native/file';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { CommonProvider } from '../providers/common/common';
 import { AuthProvider } from '../providers/auth/auth';
@@ -47,7 +48,10 @@ import { FIREBASE_CONFIG } from './app.config';
     CommonProvider,
     AdMobFreeRewardVideo,
     File,
-    FileTransfer
+    FileTransfer,
+    GooglePlus,
+    InAppBrowser,
+    Facebook
   ]
 })
 export class AppModule {}

@@ -20,45 +20,59 @@
   <div padding></div>
   <div padding></div>
 
+  <form [formGroup]="form">
 
-  <ion-item style="border:ridge; border-color:#921B30">
-    <ion-label color="dark">Select Semester</ion-label>
-    <ion-select [(ngModel)]="semester" interface="popover">
-      <ion-option *ngFor="let semester of semesters">{{semester.number}}</ion-option>
-    </ion-select>
-  </ion-item>
+    <ion-item style="border:ridge; border-color:#921B30">
+      <ion-label color="dark">Email</ion-label>
+      <ion-input type="email" color="theme" formControlName="email"></ion-input>
+    </ion-item>
+    <div padding></div>
+    <ion-item style="border:ridge; border-color:#921B30">
+      <ion-label color="dark">Password</ion-label>
+      <ion-input type="password" color="theme" formControlName="password"></ion-input>
+    </ion-item>
+    <div padding></div>
+    <ion-item style="border:ridge; border-color:#921B30">
+      <ion-label color="dark">Select Semester</ion-label>
+      <ion-select formControlName="semester" interface="popover">
+        <ion-option *ngFor="let semester of semesters">{{semester.number}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div padding></div>
+    <ion-item style="border:ridge; border-color:#921B30;">
+      <ion-label color="dark">Select Branch</ion-label>
+      <ion-select formControlName="branch" interface="popover">
+        <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div padding></div>
+    <ion-item style="border:ridge; border-color:#921B30">
+      <ion-label color="dark">Select College</ion-label>
+      <ion-select formControlName="college" interface="popover">
+        <ion-option *ngFor="let college of colleges">{{college.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <div padding></div>
 
-  <div padding></div>
-  <ion-item style="border:ridge; border-color:#921B30;">
-    <ion-label color="dark">Select Branch</ion-label>
-    <ion-select [(ngModel)]="branch" interface="popover">
-      <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
-    </ion-select>
-  </ion-item>
-  <div padding></div>
-  <ion-item style="border:ridge; border-color:#921B30">
-    <ion-label color="dark">Select College</ion-label>
-    <ion-select [(ngModel)]="college" interface="popover">
-      <ion-option *ngFor="let college of colleges">{{college.name}}</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-footer>
-    <ion-toolbar color="theme">
-      <button ion-button color="light" block (click)="login()">
-      <ion-grid>
-        <ion-row>
-          <ion-col col-1></ion-col>
-          <ion-col col-2>
-            <ion-icon name="logo-googleplus" color="theme"></ion-icon>
-          </ion-col>
-          <ion-col col-9>
-            Sign In
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </button>
-    </ion-toolbar>
-  </ion-footer>
+  </form>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="theme">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button color="light" block (click)="login()">
+            Sign In
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button color="light" block (click)="sendPasswordResetEmail()">
+            Forgot password
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,8 +1,8 @@
 // SUBJECTS[SEMESTER: number][BRANCH: string] = Array of subjects
 
-const First_Sem = ['Applied Chemistry','Applied Mathematics', 'Applied Physics', 'Electrical Technology', 'Engineering Graphics', 'Fundamentals of Computing', 'Human Values and Professional Ethics', 'Manufacturing Processes'];
+const First_Sem = ['Applied Chemistry', 'Applied Mathematics', 'Applied Physics', 'Electrical Technology', 'Engineering Graphics', 'Fundamentals of Computing', 'Human Values and Professional Ethics', 'Manufacturing Processes'];
 
-const Second_Sem = ['Environmental Studies','Applied Mathematics II', 'Applied Physics II', 'Electronic Devices', 'Introduction to Programming', 'Commucation Skills', 'Engineering Mechanics'];
+const Second_Sem = ['Environmental Studies', 'Applied Mathematics II', 'Applied Physics II', 'Electronic Devices', 'Introduction to Programming', 'Commucation Skills', 'Engineering Mechanics'];
 
 export const SUBJECTS: any[] = [
   {
@@ -14,7 +14,7 @@ export const SUBJECTS: any[] = [
     'CIVIL': First_Sem,
     'CHEMICAL': First_Sem,
     'ICE': First_Sem,
-    'MECHATRONICE': First_Sem,
+    'MECHATRONICS': First_Sem,
     'BIOCHEMICAL': First_Sem,
     'TOOL': First_Sem,
     'ELECTRICAL': First_Sem
@@ -28,7 +28,7 @@ export const SUBJECTS: any[] = [
     'CIVIL': Second_Sem,
     'CHEMICAL': Second_Sem,
     'ICE': Second_Sem,
-    'MECHATRONICE': Second_Sem,
+    'MECHATRONICS': Second_Sem,
     'BIOCHEMICAL': Second_Sem,
     'TOOL': Second_Sem,
     'ELECTRICAL': Second_Sem
@@ -40,36 +40,81 @@ export const SUBJECTS: any[] = [
     'EEE': ['Analog Electronics I', 'Applied Mathematics III', 'Circuits and Systems', 'Data Structure', 'Electronic Machines I', 'Materials in Electrical Systems'],
     'MAE': ['Electronic Machines', 'Fluid Mechanics', 'Material Science and Metallurgy', 'Production Technology', 'Strength of material', 'Thermal Science'],
     'CIVIL': ['Building Materials and Construction', 'Engineering Geology', 'Fluid Mechanics', 'Numerical Analysis and Statistical Techniques', 'Strength of Material', 'Surveying'],
-    'CHEMICAL': ['Applied Mathematics III', 'Fluid Mechanics', 'Chemical Process Calculations', 'Physical Chemistry', 'Unit Operation', 'Thermal Science'],
-    'ICE': Second_Sem,
-    'MECHATRONICE': Second_Sem,
-    'BIOCHEMICAL': Second_Sem,
-    'TOOL': Second_Sem,
-    'ELECTRICAL': Second_Sem
+    'CHEMICAL': ['Applied Mathematics III', 'Fluid Mechanics', 'Chemical Process Calculations', 'Physical Chemistry', 'Unit Operation I'],
+    'ICE': ['Applied Mathematics III', 'Basics of Measurements', 'Circuits and Systems', 'Data Structure', 'Sensors and Transducers', 'Switching Theory and Logic Design'],
+    'MECHATRONICS': ['Fluid Mechanics', 'Material Science and Metallurgy', 'Measurements and Instrumentation', 'Mechanics of Solids', 'Numerical Analysis and Statistical Techniques', 'Switching Theory and Logic Design'],
+    'BIOCHEMICAL': ['Applied Mathematics', 'Biochemical Process Calculations', 'Fluid Mechanics', 'Introduction to Life Sciences', 'Transport phenomenon', 'Unit Operations I'],
+    'TOOL': ['Electrical Machines', 'Fluid Mechanics', 'Material Science and Metallurgy', 'Mechanics of Solids', 'Numerical Analysis and Statistical Techniques', 'Production Technology'],
+    'ELECTRICAL': ['Analog Electronics', 'Applied Mathematics III', 'Circuit and Systems', 'Data Structures', 'Electrical Machines I', 'Material in Electrical Systems']
   },
   {
-    'CSE': ['a'],
-    'ECE': ['a'],
-    'IT': ['a']
+    'CSE': ['Applied Mathematics IV', 'Communication Systems', 'Computer Organization and Architecture', 'Database Management System', 'Object Oriented Programming', 'Theory of Computation'],
+    'ECE': ['Analog Electronics II', 'Applied Mathematics IV', 'Communication Systems', 'Computer Organization and Architecture', 'Electromagnetic Field Theory', 'Network Analysis and Synthesis'],
+    'IT': ['Applied Mathematics IV', 'Computer Organization and Architecture', 'Control Systems', 'Database Management Systems', 'Object Oriented Programming', 'Theory of computation'],
+    'EEE': ['Analog Electronics II', 'Control Systems', 'Electrical and Electronics Measuring Instruments', 'Electrical Machines II', 'Electromagnetic Field Theory', 'Power System I'],
+    'MAE': ['Fluid Systems', 'Manufacturing Machines', 'Measurements and Instrumentation', 'Numerical Analysis and Statistical Techniques', 'Switching Theory and Logic Design', 'Theory of Machines'],
+    'CIVIL': ['Advanced Surveying', 'Design of Concrete Structure', 'Hydraulics and Hydraulic Machines', 'Soil Mechanics', 'Structural Analysis', 'Water Engineering'],
+    'CHEMICAL': ['Applied Mathematics IV', 'Chem Engg Thermodynamics I', 'Heat Transfer I', 'Material Science', 'Physico Organic Chemistry', 'Unit Operations II'],
+    'ICE': ['Communication Systems', 'Control Systems', 'Electrical Machines', 'Measurements and Instrumentation', 'Power Electronics', 'Theory and Applications of Integrated Circuits'],
+    'MECHATRONICS': ['Control System', 'Hydraulics and Pneumatics', 'Kinematics and dynamics of Machinery', 'Organizational Behaviour', 'Signals and Systems', 'Thermal science'],
+    'BIOCHEMICAL': ['Applied Mathematics II', 'Bio Chemistry', 'Bio Reaction Engg', 'Engg Thermodynamics I', 'Microbiology', 'Unit Operation II'],
+    'TOOL': ['Machine Element Design', 'Machine Tools', 'Metal Forming', 'Metrology and Quality Assurance', 'Theory of Machines', 'Thermal Science'],
+    'ELECTRICAL': ['Control Systems', 'Electrical Machines II', 'Electrical Measuring Instruments and Transducers', 'Electromagnetic Field Theory', 'Power System I', 'Thermodynamics']
   },
   {
-    'CSE': ['a'],
-    'ECE': ['a'],
-    'IT': ['a']
+    'CSE': ['Algorithms Design and Analysis', 'Communication Skills for Professionals', 'Digital Communication', 'Industrial Management', 'Java Programming', 'Software Engineering'],
+    'ECE': ['Communication Skills for Professionals', 'Control Systems', 'Digital Communication', 'Digital System Design', 'Industrial Management', 'Microprocessor and Microcontroller'],
+    'IT': ['Algorithms Design and Analysis', 'Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Java Programming', 'Software Engineering'],
+    'EEE': ['Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Power Electronics', 'Power Electronics', 'Sensors and Transducers', 'Switching Theory and Logic Design'],
+    'MAE': ['Communication Skills for Professionals', 'Control Systems', 'Heat Transfer and IC Engines', 'Machine Design', 'Management fof Manufacturing Systems', 'Metal Cutting and Tool Design', 'Metrology'],
+    'CIVIL': ['Advanced Structural Analysis', 'Communication Skills for Professionals', 'Design of Steel Structure', 'Engineering Hydrology', 'Geotechnical and Foundation Engineering', 'Wastewater Engineering and Reuse'],
+    'CHEMICAL': ['Chem Engg Thermodynamics II', 'Chem Reaction Engineering I', 'Chemical Process Industries I', 'Heat Transfer II', 'Mass Transfer', 'Process Control I'],
+    'ICE': ['Communication Skills for Professionals', 'Digital System Design', 'Industrial Instrumentation', 'Industrial Management', 'Microprocessors and Microcontrollers', 'Object Oriented Programming using JAVA'],
+    'MECHATRONICS': ['Communication Skills for Professionals', 'Digital Signal Processing', 'Machine Element Design', 'Metrology and Quality Control', 'Power Electronics and Drives', 'Sensors and Transducers'],
+    'BIOCHEMICAL': ['Bio Reaction Engg', 'Heat Transfer', 'Immunology', 'Mass Transfer', 'Molecular Biology', 'Protein Science and Engg'],
+    'TOOL': ['CNC Machining and Programming', 'Communication Skills for Professionals', 'Control Systems', 'Jigs Fixture and Gauge Design', 'Plastic Technology', 'Production Planning and Control'],
+    'ELECTRICAL': ['Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Power Electronics', 'Signals and Systems', 'Switching Theory and Logic Design']
   },
   {
-    'CSE': ['a'],
-    'ECE': ['a'],
-    'IT': ['a']
+    'CSE': ['Artificial Intelligence', 'Compiler Design', 'Computer Networks', 'Microprocessor and Microcontroller', 'Operating Systems', 'Web Engineering',],
+    'ECE': ['Antenna and Wave Propagation', 'Data Comminication and Networks', 'Digital Signal Processing', 'Information Theory and Coding', 'Microwave Engineering', 'VLSI Design'],
+    'IT': ['Artificial Intelligence', 'Compiler Design', 'Data Communication and Networks', 'Microprocessor and Microcontroller', 'Operating Systems', 'Web Engineering',],
+    'EEE': ['Digital Signal Processing', 'Microprocessor and Microcontroller', 'Power Station Practice', 'Power System II', 'Utilization of Electrical Energy and Electric Traction', 'VLSI Design',],
+    'MAE': ['Automobile Engineering', 'Data Communication and Networks', 'Machine Design', 'Microprocessor and Microcontroller', 'Operations Research', 'Refrigeration and Air Conditioning',],
+    'CIVIL': ['Advanced Structural Design', 'Applications of Remote Sensing and GIS', 'Microprocessor and Microcontroller', 'OCF and NH', 'Quantity Surveying and Cost Estimation', 'Transportation Engineering I'],
+    'CHEMICAL': ['Chemical Process Control II', 'Chemical Process Industries II', 'Chemical Reaction Engg II', 'Computational Methods for Chemical Engineers', 'Organizational Behaviour and Industrial Management', 'Safety, Hazards and Environment'],
+    'ICE': ['Analytical Instrumentation', 'Data Communication and Networks', 'Digital Signal Processing', 'Modern Control Systems', 'Pneumatic and Hydraulic Instrumentation', 'Process Control'],
+    'MECHATRONICS': ['Automotive Electronics', 'Computer Integrated Manufacturing', 'Management fof Manufacturing System', 'Manufacturing Technology', 'Microprocessors and Microcontrollers', 'Programmable Logic Controller and SCADA'],
+    'BIOCHEMICAL': ['Bioprocess Equipment Design', 'Computational Methods for Biochemical Engineers', 'Environmental Biotechnology', 'Instrumentation and Control',],
+    'TOOL': ['Finite Element Method', 'Layered Manufacturing', 'Metal Cutting and Tool Design', 'Mould Design I', 'Press Tool Design I', 'Total Quality Management'],
+    'ELECTRICAL': ['EHV AC and HVDC Transmissions', 'Electrical Machine III', 'Microprocessor and Microcontroller', 'Power Station Practice', 'Power System II', 'Utilization of Electrical Energy and Electric Traction']
   },
   {
-    'CSE': ['a'],
-    'ECE': ['a'],
-    'IT': ['a']
+    'CSE': ['Advanced Database Management System', 'Data Mining and Business Intelligence', 'Information Security', 'Software Testing and Quality Assurance', 'Wireless Communication'],
+    'ECE': ['Embedded Systems', 'Optoelectronics and Optical Communication', 'Radar and Navigation', 'Wireless Communication'],
+    'IT': ['Advanced Computer Networks', 'Advanced Database Administration', 'Cloud Computing', 'Cryptography and Network Security', 'Digital Signal Processing', 'Distributed Databases', 'Dot Net and C Sharp Programming', 'Embedded Systems', 'Enterprise Computing in Java', 'Grid Computing', 'Optoelectronics and Optical Communication', 'Probabilistic Graphical Models', 'Semantic Web Technologies', 'Sociology and Elements of Indian History for Engineers', 'Software Testing', 'System and Network Administration', 'Wireless Communication'],
+    'EEE': ['Advanced Control Systems', 'EHV AC and HVDC Transmissions', 'Electrical Drives',],
+    'MAE': ['Computer Aided Design', 'Computer integrated Manufacturing', 'Mechatronics', 'Renewable Energy Resources',],
+    'CIVIL': ['Economics for Engineers', 'Irrigation Engineering', 'Transportation Engineering I',],
+    'CHEMICAL': [],
+    'ICE': ['Artificial Neural Networks', 'Biomedical Instrumentation', 'Computer Architecture', 'Database Management Systems', 'Digital Control Systems', 'Electrical Drives', 'Engineering Materials', 'Industrial Automation and Control', 'Instrumentation Diagnostics', 'Mechatronics', 'Operating Systems', 'Process Modeling and Optimization Techniques', 'Renewable Energy Resources', 'Sociology and Elements of Indian History for Engineers', 'Softwae Engineering'],
+    'MECHATRONICS': ['Artificial Intelligence', 'Automobile Engineering', 'Computer Aided Design', 'Database Management Systems', 'Decision Science', 'Digital Image Processing', 'Finite Element Method', 'Fuzzy Logic and Neural Networks', 'IC Engines', 'Management Information System and ERP', 'Mechatronics System Design', 'Micro Electro Mechanical System and Nano Technology', 'Non Conventional manufacturing processes', 'Operations Research', 'Process Modelling and Optimization Technique', 'Product Design and Costing', 'Renewable Energy Resources', 'Sociology and Elements of Indian History for Engineers', 'Waste and Heat Recovery Systems'],
+    'BIOCHEMICAL': ['Biochemical Processes', 'Bioprocess Modeling and Simulation', 'Enzyme Technology', 'Introduction to Economics', 'Process Engineering'],
+    'TOOL': ['Advanced Welding Technology', 'Automobile Engineering', 'Computer Aided Graphics and Product Design', 'Concurrent Engineering', 'Creativity in Engineering', 'Database Management Systems', 'Ergonomics', 'Low Cost Automation', 'Management Information Systems and ERP', 'Material Management', 'Mould Design II', 'Operations Research', 'Press Tool Design II', 'Renewable Energy Resouurces', 'Sociology and Elements of Indian History for Engineers', 'Value Engineering', 'Vibrations Engineering Design'],
+    'ELECTRICAL': ['Advanced Control Systems', 'Biomedical Instrumentation', 'Database Management Systems', 'Digital System Design', 'Electrical Drives', 'Electrical Machines Design', 'High Voltage Engineering', 'Mechatronics', 'Optoelectronics and Optical Communication', 'PLC and SCADA System', 'Power Distribution System', 'Power line Carrier Communication', 'Renewable Energy Resources', 'Sociology and Elements of Indian History for Engineers', 'Telemetry and Data Acquisition Systems'],
   },
   {
-    'CSE': ['a'],
-    'ECE': ['a'],
-    'IT': ['a']
+    'CSE': ['Human Values and Professional Ethics II', 'Machine Learning', 'Mobile Computing', 'Selected Topic of Recent trend in IT'],
+    'ECE': ['Ad Hoc and Sensor Networks', 'Human Values and Professional Ethics II', 'Satellite Comminication',],
+    'IT': ['Ad hoc and Sensor Networks', 'Big Data Analytics', 'E Commerce and M Commerce', 'Human Computer Interaction', 'Human Values and Professional Ethics II', 'Mobile Computing', 'Selected Topic of Recent trend in IT'],
+    'EEE': ['Human Values and Professional Ethics II', 'Neuro Fuzzy Systems', 'Power System Operation and Control',],
+    'MAE': ['Engineering System Modelling adn Simulation', 'Human Values and Professional Ethics II', 'Robotics',],
+    'CIVIL': ['Analysis and Design of Bridges', 'Human Values and Professional Ethics II', 'Planning and Management of Construction Projects',],
+    'CHEMICAL': ['Biomass For Energy and Chemical Elective III/IDS', 'Chemical Process Engineering', 'Petroleum Engineering', 'Polymer Engineering'],
+    'ICE': ['Ad hoc and Sensor Networks', 'Computer Graphics and Multimedia', 'Consumer Electronics', 'Digital Image Processing', 'Electromagnetic Field Theory', 'Embedded Systems', 'Human Values and Professional Ethics II', 'Intelligent Systems and Control', 'Mobile Communication', 'Object Oriented Software Engineering', 'Robotics', 'Satellite Communication', 'System Modelling adn Simulation', 'Virtual Instrumentation', 'VLSI Design'],
+    'MECHATRONICS': ['Consumer Electronics', 'Data Communication and Networks', 'Embedded System', 'Engineering Economics and Cost Analysis', 'Engineering System Modelling and Simulation', 'Digital Image Processing', 'Finite Element Method', 'Fuzzy Logic and Neural Networks', 'IC Engines', 'Management Information System and ERP', 'Mechatronics System Design', 'Micro Electro Mechanical System and Nano Technology', 'Non Conventional manufacturing processes', 'Operations Research', 'Process Modelling and Optimization Technique', 'Product Design and Costing', 'Renewable Energy Resources', 'Sociology and Elements of Indian History for Engineers', 'Waste and Heat Recovery Systems'],
+    'BIOCHEMICAL': ['Bio Informatics', 'Biosafety, Hazards and IPR Issues', 'Organizational Behavior and Industrial Management',],
+    'TOOL': ['Advanced Die Casting and Die Design', 'Applied Plasticity', 'Cryogenic Engineering', 'Engineering System Modeling and Simulation', 'Flexible Manufacturing System', 'Human Values and Professional Ethics II', 'Industrial Management', 'Modern Manufacturing Methods', 'Robotics', 'Safety Engineering', 'Soft Computing', 'Supply Chain Management Planning', 'Theory of Design Optimization',],
+    'ELECTRICAL': ['Application of Power Electronics to Power Systems', 'Data Communication and Networks', 'Digital Communication', 'Digital Image Processing', 'Digital Signal Processing', 'Electrical Energy Conservation', 'Electrical Power Quality', 'Electrical System Design', 'Embedded Systems', 'Human Values and Professional Ethics II', 'Intelligent and Smart Instrumentation', 'Neuro and Fuzzy Systems', 'Object Oriented Programming Using C++', 'Power Plant Instrumentation', 'Power System Analysis and Stability', 'Power System Operation and Control', 'Reliability Engineering and Application to Power System'],
   }
 ]

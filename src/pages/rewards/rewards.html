@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="theme">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Redeem Rewards</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+
+  <div padding></div>
+
+  <button ion-button large color="theme" (click)="playVideo()">Play Video (GET 10 points)</button>
+
+  <h4>Total points: {{ points }}</h4>
+
+  <p style="font-style: italic">You can redeem points when they reach a minimum of 500</p>
+
+  <ion-item padding>
+    <ion-label floating>Paytm Number</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <button ion-button block color="theme" disabled>Redeem</button>
+
+</ion-content>

@@ -13,7 +13,7 @@ export class CommonProvider {
     return this.loading.create({ content, duration, ...opts });
   }
 
-  getToastInstance(message: string, duration?: number, opts?) {
+  getToastInstance(message: string, duration=1500, opts?) {
     return this.toast.create({ message, duration, ...opts });
   }
 

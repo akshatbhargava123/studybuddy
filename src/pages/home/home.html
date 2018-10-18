@@ -6,27 +6,30 @@
     <ion-title>
       My Downloads
     </ion-title>
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="search" margin-right></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <h6 padding ion-text *ngIf="!downloads.length && loaded">
+    No downloads found.
+  </h6>
   <ion-list>
     <ion-grid>
       <ion-row *ngFor="let download of downloads">
         <ion-col col-10>
           <button ion-item>
-           {{ download.title }}
+           {{ download.fileName.split('.')[0] }}
            <p>{{ download.subject }}</p>
            <p style="color: #921B30"><i>{{ download.type }}</i></p>
           </button>
         </ion-col>
         <ion-col col-2>
-          <button ion-button icon-only clear color="theme">
+          <button ion-button icon-only clear color="theme" (click)="deleteFile(download)">
             <ion-icon name="trash"></ion-icon>
           </button>
         </ion-col>

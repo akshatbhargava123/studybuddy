@@ -33,9 +33,13 @@
       <ion-list-header>
         OTHERS
       </ion-list-header>
-      <ion-item menuToggle (click)="redeemVideoPoints()">
+      <ion-item menuToggle (click)="openPage('RewardsPage')">
         <ion-icon name="star" item-start></ion-icon>
         Redeem Video Points
+      </ion-item>
+      <ion-item menuToggle (click)="openYoutube()">
+        <ion-icon name="logo-youtube" item-start></ion-icon>
+        Visit Youtube Channel
       </ion-item>
       <ion-item (click)="openPage('MyProfilePage')" menuToggle>
         <ion-icon name="person" item-start></ion-icon>
