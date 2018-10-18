@@ -63,12 +63,25 @@ export class LoginPage {
   ) { }
 
   ionViewWillLoad() {
+
+    if (this.auth.getToken() != null) {
+      const loading = this.common.getLoadingInstance('Logging you automatically');
+      loading.present();
+      const subscription = this.auth.getUserDetails().subscribe(user => {
+        subscription.unsubscribe();
+        loading.dismiss();
+        console.log(user)
+        this.navCtrl.setRoot('MenuPage', { user });
+      });
+    }
+
     this.form = this.formBuilder.group({
       semester: ['', Validators.required],
       branch: ['', Validators.required],
       college: ['', Validators.required],
       email: ['', Validators.email],
       password: ['', Validators.required],
+      name: ['', Validators.required]
     });
   }
 
@@ -89,7 +102,18 @@ export class LoginPage {
 
   login() {
 
-    const { email, password, semester, branch, college } = this.form.value;
+    const getDetailsAndNavigate = () => {
+      const loading = this.common.getLoadingInstance('Loading Profile...');
+      loading.present();
+      const subscription = this.auth.getUserDetails().subscribe(user => {
+        subscription.unsubscribe();
+        loading.dismiss();
+        console.log(user)
+        this.navCtrl.setRoot('MenuPage', { user });
+      });
+    }
+
+    const { email, password, semester, branch, college, name } = this.form.value;
 
     if (!this.form.valid) {
       return this.common.getToastInstance('Please fill all fields correctly first!').present();
@@ -98,23 +122,23 @@ export class LoginPage {
     const loading = this.common.getLoadingInstance('Please wait...');
     loading.present();
     this.auth.register(email, password).then(res => {
-      this.auth.setDetailsInDb(res.user.uid, semester, branch, college).then(_ => {
+      this.auth.setDetailsInDb(res.user.uid, semester, branch, college, name).then(_ => {
         loading.dismiss();
         this.auth.setToken(res.user.uid);
 
         // registered and logged in successfully
-        this.navCtrl.setRoot('MenuPage');
+        getDetailsAndNavigate();
 
       })
     }).catch(error => {
       if (error.code == 'auth/email-already-in-use') {
         this.auth.login(email, password).then(res => {
-          this.auth.setDetailsInDb(res.user.uid, semester, branch, college).then(_ => {
+          this.auth.setDetailsInDb(res.user.uid, semester, branch, college, name).then(_ => {
             loading.dismiss();
             this.auth.setToken(res.user.uid);
 
             // logged in successfully
-            this.navCtrl.setRoot('MenuPage');
+            getDetailsAndNavigate();
           });
 
         }).catch(err => {

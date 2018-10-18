@@ -12,8 +12,8 @@ export class SubjectsPage {
   items: any = [];
   itemExpandHeight: number = 100;
 
-  semester: number = 0;
-  branch: string = 'CSE';
+  semester: number;
+  branch: string;
 
   subjects = [];
 
@@ -21,6 +21,10 @@ export class SubjectsPage {
     private navCtrl: NavController,
     private navParams: NavParams
   ) {
+    const user = this.navParams.get('user');
+    if (!user) return;
+    this.semester = user.semester;
+    this.branch = user.branch;
     this.initSubjects();
   }
 

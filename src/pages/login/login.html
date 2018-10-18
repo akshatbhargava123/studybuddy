@@ -23,6 +23,11 @@
   <form [formGroup]="form">
 
     <ion-item style="border:ridge; border-color:#921B30">
+      <ion-label color="dark">Name</ion-label>
+      <ion-input type="text" color="theme" formControlName="name"></ion-input>
+    </ion-item>
+    <div padding></div>
+    <ion-item style="border:ridge; border-color:#921B30">
       <ion-label color="dark">Email</ion-label>
       <ion-input type="email" color="theme" formControlName="email"></ion-input>
     </ion-item>
@@ -34,21 +39,21 @@
     <div padding></div>
     <ion-item style="border:ridge; border-color:#921B30">
       <ion-label color="dark">Select Semester</ion-label>
-      <ion-select formControlName="semester" interface="popover">
-        <ion-option *ngFor="let semester of semesters">{{semester.number}}</ion-option>
+      <ion-select formControlName="semester">
+        <ion-option *ngFor="let semester of semesters;let i=index;" [value]="i">{{semester.number}}</ion-option>
       </ion-select>
     </ion-item>
     <div padding></div>
     <ion-item style="border:ridge; border-color:#921B30;">
       <ion-label color="dark">Select Branch</ion-label>
-      <ion-select formControlName="branch" interface="popover">
+      <ion-select formControlName="branch">
         <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
       </ion-select>
     </ion-item>
     <div padding></div>
     <ion-item style="border:ridge; border-color:#921B30">
       <ion-label color="dark">Select College</ion-label>
-      <ion-select formControlName="college" interface="popover">
+      <ion-select formControlName="college">
         <ion-option *ngFor="let college of colleges">{{college.name}}</ion-option>
       </ion-select>
     </ion-item>

@@ -57,7 +57,7 @@
     </ion-list>
   </ion-content>
   <ion-footer>
-    <ion-item (click)="openPage('LoginPage')" menuToggle>
+    <ion-item (click)="logout()" menuToggle>
       <ion-icon name="log-out" item-start></ion-icon>
       Log out
     </ion-item>
@@ -66,4 +66,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" [rootParams]="params" #content swipeBackEnabled="false"></ion-nav>

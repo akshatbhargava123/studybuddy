@@ -13,15 +13,17 @@
 
   <button ion-button large color="theme" (click)="playVideo()">Play Video (GET 10 points)</button>
 
-  <h4>Total points: {{ points }}</h4>
+  <h4>Total points: {{ user.points || 0 }}</h4>
 
   <p style="font-style: italic">You can redeem points when they reach a minimum of 500</p>
 
   <ion-item padding>
     <ion-label floating>Paytm Number</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="phone"></ion-input>
   </ion-item>
 
-  <button ion-button block color="theme" disabled>Redeem</button>
+  <button ion-button block color="theme" [disabled]="user.points < 500" (click)="redeem()">
+    Redeem
+  </button>
 
 </ion-content>

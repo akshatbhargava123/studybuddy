@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { ExpandableComponent } from './expandable/expandable';
-import { GoogleLoginComponent } from './google-login/google-login';
 import { CommonModule } from '@angular/common';
 @NgModule({
-	declarations: [ExpandableComponent,
-    GoogleLoginComponent],
+	declarations: [ExpandableComponent],
 	imports: [CommonModule],
-	exports: [ExpandableComponent,
-    GoogleLoginComponent]
+	exports: [ExpandableComponent]
 })
 export class ComponentsModule {}

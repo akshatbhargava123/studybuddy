@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ContactUsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @IonicPage()
 @Component({
@@ -14,6 +8,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contact-us.html',
 })
 export class ContactUsPage {
+
+  user: any = {};
+  message: string = ''
 
   subjects = [
     { title: "Non-availability of material" },
@@ -24,7 +21,29 @@ export class ContactUsPage {
     { title: "Others" }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    private emailComposer: EmailComposer,
+    private navParams: NavParams
+  ) {
+    this.user = this.navParams.get('user');
+  }
+
+  sendmsg() {
+    this.emailComposer.requestPermission().then(yes => {
+      if (yes) {
+        this.emailComposer.open({
+          subject: 'Submitting app feedback',
+          to: 'studybuddy.ytube@gmail.com',
+          body: `
+            Hello,
+
+            ${this.message}
+
+            ~${this.user.name}
+          `
+        })
+      }
+    });
   }
 
 }

@@ -3,13 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { AdMobFreeRewardVideo } from '@ionic-native/admob-free';
+import { AdMobFree } from '@ionic-native/admob-free';
+import { EmailComposer } from '@ionic-native/email-composer';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FileTransfer } from '@ionic-native/file-transfer';
-import { GooglePlus } from '@ionic-native/google-plus';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { StatusBar } from '@ionic-native/status-bar';
-import { Facebook } from '@ionic-native/facebook';
 import { File } from '@ionic-native/file';
 
 import { AngularFireModule } from '@angular/fire';
@@ -46,12 +45,11 @@ import { FIREBASE_CONFIG } from './app.config';
     AuthProvider,
     DbProvider,
     CommonProvider,
-    AdMobFreeRewardVideo,
+    AdMobFree,
     File,
     FileTransfer,
-    GooglePlus,
     InAppBrowser,
-    Facebook
+    EmailComposer
   ]
 })
 export class AppModule {}

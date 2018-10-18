@@ -18,7 +18,7 @@ export class AuthProvider {
   }
 
   getToken() {
-    return localStorage.get(AuthProvider.TOKEN_KEY);
+    return localStorage.getItem(AuthProvider.TOKEN_KEY);
   }
 
   sendPasswordResetEmail(email: string) {
@@ -33,10 +33,26 @@ export class AuthProvider {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  setDetailsInDb(uid, semester, branch, college) {
+  setDetailsInDb(uid, semester, branch, college, name) {
     return this.afDb.doc(`users/${uid}`).set({
-      semester, branch, college
+      semester, branch, college, name
     });
+  }
+
+  updateProfile(profile: any) {
+    return this.afDb.doc(`users/${this.getToken()}`).set(profile);
+  }
+
+  getUserDetails() {
+    return this.afDb.doc(`users/${this.getToken()}`).valueChanges();
+  }
+
+  addRedeemRequest(redeemTransaction) {
+    return this.afDb.collection('rewards').doc(this.afDb.createId()).set(redeemTransaction)
+  }
+
+  logout() {
+    localStorage.clear();
   }
 
 }

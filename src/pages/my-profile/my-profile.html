@@ -16,23 +16,23 @@
   <div padding></div>
   <div padding></div>
 
-  <h3>Akshat Bhargava</h3>
+  <h3>{{ user.name }}</h3>
   <div padding></div>
   <ion-list>
     <ion-item>
       <p>SEMESTER</p>
       <br />
-      <span>1</span>
+      <span>{{ user.semester != null ? user.semester + 1 : '' }}</span>
     </ion-item>
     <ion-item>
       <p>BRANCH</p>
       <br />
-      <span>CSE</span>
+      <span>{{ user.branch }}</span>
     </ion-item>
     <ion-item>
       <p>COLLEGE</p>
       <br />
-      <span>HMR Institute of Technology & Management</span>
+      <span>{{ user.college }}</span>
     </ion-item>
     <ion-item></ion-item>
   </ion-list>
