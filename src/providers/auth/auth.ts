@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import firebase from 'firebase'
 
 @Injectable()
 export class AuthProvider {
@@ -49,6 +50,14 @@ export class AuthProvider {
 
   addRedeemRequest(redeemTransaction) {
     return this.afDb.collection('rewards').doc(this.afDb.createId()).set(redeemTransaction)
+  }
+
+  sendVerificationMail() {
+    return this.afAuth.auth.currentUser.sendEmailVerification();
+  }
+
+  isEmailVerified() {
+    return this.afAuth.auth.currentUser.emailVerified;
   }
 
   logout() {

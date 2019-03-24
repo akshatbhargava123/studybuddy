@@ -8,5 +8,5 @@ export interface Note {
   views: number;
   date: string;
   size: number;
-  type: string; // 'notes', 'pfs', 'ebooks'
+  type: string; // 'notes', 'pfs', 'ebooks', 'pys'
 }

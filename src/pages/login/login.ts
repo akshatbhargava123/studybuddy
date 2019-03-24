@@ -119,26 +119,58 @@ export class LoginPage {
       return this.common.getToastInstance('Please fill all fields correctly first!').present();
     }
 
+    if (this.form.value.password.length < 6) {
+      return this.common.getToastInstance('Password must be length greater than 6!').present();
+    }
+
     const loading = this.common.getLoadingInstance('Please wait...');
     loading.present();
     this.auth.register(email, password).then(res => {
-      this.auth.setDetailsInDb(res.user.uid, semester, branch, college, name).then(_ => {
-        loading.dismiss();
-        this.auth.setToken(res.user.uid);
-
-        // registered and logged in successfully
-        getDetailsAndNavigate();
-
+      this.auth.login(email, password).then(res => {
+        this.auth.setDetailsInDb(res.user.uid, semester, branch, college, name).then(_ => {
+          loading.dismiss();
+          
+          // registered and logged in successfully
+          if (!this.auth.isEmailVerified()) {
+            const verificationLoading = this.common.getLoadingInstance('Sending verification email...');
+            verificationLoading.present();
+            this.auth.sendVerificationMail().then(_ => {
+              verificationLoading.dismiss();
+              this.auth.setToken(res.user.uid);
+            }).catch(error => {
+              verificationLoading.dismiss();
+            })
+          } else {
+            getDetailsAndNavigate();
+          }
+        })
       })
     }).catch(error => {
       if (error.code == 'auth/email-already-in-use') {
         this.auth.login(email, password).then(res => {
+          this.auth.setToken(res.user.uid);
           this.auth.setDetailsInDb(res.user.uid, semester, branch, college, name).then(_ => {
             loading.dismiss();
-            this.auth.setToken(res.user.uid);
 
             // logged in successfully
-            getDetailsAndNavigate();
+
+            const vToast = this.common.getToastInstance('Verification email sent!');
+
+            if (!this.auth.isEmailVerified()) {
+              const verificationLoading = this.common.getLoadingInstance('Sending verification email...');
+              verificationLoading.present();
+              this.auth.sendVerificationMail().then(_ => {
+                verificationLoading.dismiss();
+                this.auth.setToken(res.user.uid);
+                vToast.present();
+              }).catch(error => {
+                vToast.setMessage('Problem while sending verification email, try again later!');
+                vToast.present();
+                verificationLoading.dismiss();
+              });
+            } else {
+              getDetailsAndNavigate();
+            }
           });
 
         }).catch(err => {

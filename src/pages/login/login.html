@@ -15,43 +15,41 @@
 
 <ion-content padding>
   <div padding></div>
-  <img src="assets/imgs/download.png" style="padding-left: 33%;" />
-  <div padding></div>
-  <div padding></div>
+  <h1 text-center>Smart Study Hub</h1>
   <div padding></div>
 
   <form [formGroup]="form">
 
-    <ion-item style="border:ridge; border-color:#921B30">
+    <ion-item style="border:ridge; border-color:#395BB0">
       <ion-label color="dark">Name</ion-label>
       <ion-input type="text" color="theme" formControlName="name"></ion-input>
     </ion-item>
     <div padding></div>
-    <ion-item style="border:ridge; border-color:#921B30">
+    <ion-item style="border:ridge; border-color:#395BB0">
       <ion-label color="dark">Email</ion-label>
       <ion-input type="email" color="theme" formControlName="email"></ion-input>
     </ion-item>
     <div padding></div>
-    <ion-item style="border:ridge; border-color:#921B30">
+    <ion-item style="border:ridge; border-color:#395BB0">
       <ion-label color="dark">Password</ion-label>
       <ion-input type="password" color="theme" formControlName="password"></ion-input>
     </ion-item>
     <div padding></div>
-    <ion-item style="border:ridge; border-color:#921B30">
+    <ion-item style="border:ridge; border-color:#395BB0">
       <ion-label color="dark">Select Semester</ion-label>
       <ion-select formControlName="semester">
         <ion-option *ngFor="let semester of semesters;let i=index;" [value]="i">{{semester.number}}</ion-option>
       </ion-select>
     </ion-item>
     <div padding></div>
-    <ion-item style="border:ridge; border-color:#921B30;">
+    <ion-item style="border:ridge; border-color:#395BB0;">
       <ion-label color="dark">Select Branch</ion-label>
       <ion-select formControlName="branch">
         <ion-option *ngFor="let branch of branches">{{branch.name}}</ion-option>
       </ion-select>
     </ion-item>
     <div padding></div>
-    <ion-item style="border:ridge; border-color:#921B30">
+    <ion-item style="border:ridge; border-color:#395BB0">
       <ion-label color="dark">Select College</ion-label>
       <ion-select formControlName="college">
         <ion-option *ngFor="let college of colleges">{{college.name}}</ion-option>

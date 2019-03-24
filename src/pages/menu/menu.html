@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="theme" style="height: 8em">
-      <p ion-text color="light" style="font-size: x-large" margin-left>StudyBuddy</p>
+      <p ion-text color="light" style="font-size: x-large" margin-left>Smart Study Hub</p>
     </ion-toolbar>
   </ion-header>
 
@@ -30,17 +30,21 @@
         <ion-icon name="book" item-start></ion-icon>
         E-Books
       </ion-item>
+      <ion-item (click)="openPage('SearchPage', 'pys')" menuToggle>
+        <ion-icon name="book" item-start></ion-icon>
+        Previous Year Solutions
+      </ion-item>
       <ion-list-header>
         OTHERS
       </ion-list-header>
-      <ion-item menuToggle (click)="openPage('RewardsPage')">
+      <!-- <ion-item menuToggle (click)="openPage('RewardsPage')">
         <ion-icon name="star" item-start></ion-icon>
         Redeem Video Points
       </ion-item>
       <ion-item menuToggle (click)="openYoutube()">
         <ion-icon name="logo-youtube" item-start></ion-icon>
         Visit Youtube Channel
-      </ion-item>
+      </ion-item> -->
       <ion-item (click)="openPage('MyProfilePage')" menuToggle>
         <ion-icon name="person" item-start></ion-icon>
         Profile

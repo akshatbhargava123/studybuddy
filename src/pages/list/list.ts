@@ -16,7 +16,7 @@ export class ListPage {
   semester: number;
   branch: string;
   subject: string;
-  type: string; // 'notes' / 'pfs' / 'ebooks'
+  type: string; // 'notes' / 'pfs' / 'ebooks' / 'pys'
 
   notesLoaded = false;
 
@@ -41,6 +41,8 @@ export class ListPage {
     loading.present();
     const subscription = this.db.getFiles().subscribe((notes: Note[]) => {
       this.notes = notes;
+      console.log(this.notes)
+      console.log('subject', this.subject, this.type, this.branch, this.semester)
       this.filterNotes();
       this.notesLoaded = true;
       loading.dismiss();
@@ -51,7 +53,7 @@ export class ListPage {
 
   filterNotes() {
     this.notes = this.notes.filter(n => {
-      return n.subject == this.subject && n.branch == this.branch && n.semester == this.semester && (this.type == 'ALL' || n.type == this.type)
+      return n.subject == this.subject && n.branch == this.branch && n.semester + 1 == this.semester && (this.type == 'ALL' || n.type == this.type)
     });
   }
 

@@ -31,10 +31,10 @@ export class HomePage {
       this.downloads = files.map((file) => {
         const parts = file.name.split('-');
         const type = parts[0],
-              semester = parts[1],
-              branch = parts[2],
-              subject = parts[3],
-              fileName = parts[4];
+          semester = parts[1],
+          branch = parts[2],
+          subject = parts[3],
+          fileName = parts[4];
         return { type, semester, branch, subject, fileName };
       });
     }).catch(err => {
@@ -62,6 +62,13 @@ export class HomePage {
       this.common.getToastInstance('Error while deleting file!', 1500).present();
       console.log(JSON.stringify(err))
     });
+  }
+
+
+  openFile(download) {
+    this.navCtrl.push('ViewFilePage', {
+      fileName: `${download.type}-${download.semester}-${download.branch}-${download.subject}-${download.fileName}`
+    })
   }
 
 }

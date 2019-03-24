@@ -22,6 +22,7 @@ export class SubjectsPage {
     private navParams: NavParams
   ) {
     const user = this.navParams.get('user');
+    console.log('user', user)
     if (!user) return;
     this.semester = user.semester;
     this.branch = user.branch;

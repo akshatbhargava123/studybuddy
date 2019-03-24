@@ -33,7 +33,7 @@ export class ContactUsPage {
       if (yes) {
         this.emailComposer.open({
           subject: 'Submitting app feedback',
-          to: 'studybuddy.ytube@gmail.com',
+          to: 'smartstudyhub1@gmail.com',
           body: `
             Hello,
 

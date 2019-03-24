@@ -65,7 +65,7 @@ export const SUBJECTS: any[] = [
     'CSE': ['Algorithms Design and Analysis', 'Communication Skills for Professionals', 'Digital Communication', 'Industrial Management', 'Java Programming', 'Software Engineering'],
     'ECE': ['Communication Skills for Professionals', 'Control Systems', 'Digital Communication', 'Digital System Design', 'Industrial Management', 'Microprocessor and Microcontroller'],
     'IT': ['Algorithms Design and Analysis', 'Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Java Programming', 'Software Engineering'],
-    'EEE': ['Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Power Electronics', 'Power Electronics', 'Sensors and Transducers', 'Switching Theory and Logic Design'],
+    'EEE': ['Communication Skills for Professionals', 'Communication Systems', 'Industrial Management', 'Power Electronics', 'Sensors and Transducers', 'Switching Theory and Logic Design'],
     'MAE': ['Communication Skills for Professionals', 'Control Systems', 'Heat Transfer and IC Engines', 'Machine Design', 'Management fof Manufacturing Systems', 'Metal Cutting and Tool Design', 'Metrology'],
     'CIVIL': ['Advanced Structural Analysis', 'Communication Skills for Professionals', 'Design of Steel Structure', 'Engineering Hydrology', 'Geotechnical and Foundation Engineering', 'Wastewater Engineering and Reuse'],
     'CHEMICAL': ['Chem Engg Thermodynamics II', 'Chem Reaction Engineering I', 'Chemical Process Industries I', 'Heat Transfer II', 'Mass Transfer', 'Process Control I'],
